@@ -1,0 +1,169 @@
+array_index,base_name,dmc_per_lifsi,replica,slurm_state,completed_1ns_chunks,other_machine_action
+0,MIBQAR01_a2d95c,2,1,COMPLETED,15,check_existing_result
+1,BOYDWOO_4962cd,2,1,COMPLETED,15,check_existing_result
+2,CORE_4bbe9a,2,1,COMPLETED,15,check_existing_result
+3,HAYZAL_197ad3,2,1,COMPLETED,15,check_existing_result
+4,PESSUE_02e961,2,1,COMPLETED,15,check_existing_result
+5,EHIJAH_dd310f,2,1,COMPLETED,15,check_existing_result
+6,MIBQAR01_a2d95c,2,2,COMPLETED,15,check_existing_result
+7,BOYDWOO_4962cd,2,2,COMPLETED,15,check_existing_result
+8,CORE_4bbe9a,2,2,COMPLETED,15,check_existing_result
+9,HAYZAL_197ad3,2,2,COMPLETED,15,check_existing_result
+10,PESSUE_02e961,2,2,COMPLETED,15,check_existing_result
+11,EHIJAH_dd310f,2,2,COMPLETED,15,check_existing_result
+12,MIBQAR01_a2d95c,2,3,COMPLETED,15,check_existing_result
+13,BOYDWOO_4962cd,2,3,COMPLETED,15,check_existing_result
+14,CORE_4bbe9a,2,3,COMPLETED,15,check_existing_result
+15,HAYZAL_197ad3,2,3,COMPLETED,15,check_existing_result
+16,PESSUE_02e961,2,3,COMPLETED,15,check_existing_result
+17,EHIJAH_dd310f,2,3,COMPLETED,15,check_existing_result
+18,MIBQAR01_a2d95c,2,4,COMPLETED,15,check_existing_result
+19,BOYDWOO_4962cd,2,4,COMPLETED,15,check_existing_result
+20,CORE_4bbe9a,2,4,COMPLETED,15,check_existing_result
+21,HAYZAL_197ad3,2,4,COMPLETED,15,check_existing_result
+22,PESSUE_02e961,2,4,COMPLETED,15,check_existing_result
+23,EHIJAH_dd310f,2,4,COMPLETED,15,check_existing_result
+24,MIBQAR01_a2d95c,4,1,COMPLETED,15,check_existing_result
+25,BOYDWOO_4962cd,4,1,COMPLETED,15,check_existing_result
+26,CORE_4bbe9a,4,1,COMPLETED,15,check_existing_result
+27,HAYZAL_197ad3,4,1,COMPLETED,15,check_existing_result
+28,PESSUE_02e961,4,1,RUNNING,15,running_do_not_duplicate
+29,EHIJAH_dd310f,4,1,COMPLETED,15,check_existing_result
+30,MIBQAR01_a2d95c,4,2,COMPLETED,15,check_existing_result
+31,BOYDWOO_4962cd,4,2,COMPLETED,15,check_existing_result
+32,CORE_4bbe9a,4,2,OUT_OF_MEMORY,15,check_analysis_oom
+33,HAYZAL_197ad3,4,2,COMPLETED,15,check_existing_result
+34,PESSUE_02e961,4,2,COMPLETED,15,check_existing_result
+35,EHIJAH_dd310f,4,2,COMPLETED,15,check_existing_result
+36,MIBQAR01_a2d95c,4,3,COMPLETED,15,check_existing_result
+37,BOYDWOO_4962cd,4,3,RUNNING,15,running_do_not_duplicate
+38,CORE_4bbe9a,4,3,RUNNING,11,running_do_not_duplicate
+39,HAYZAL_197ad3,4,3,RUNNING,15,running_do_not_duplicate
+40,PESSUE_02e961,4,3,COMPLETED,15,check_existing_result
+41,EHIJAH_dd310f,4,3,RUNNING,13,running_do_not_duplicate
+42,MIBQAR01_a2d95c,4,4,RUNNING,11,running_do_not_duplicate
+43,BOYDWOO_4962cd,4,4,CANCELLED by 1010,9,rerun_from_initial
+44,CORE_4bbe9a,4,4,CANCELLED by 1010,7,rerun_from_initial
+45,HAYZAL_197ad3,4,4,CANCELLED by 1010,9,rerun_from_initial
+46,PESSUE_02e961,4,4,CANCELLED by 1010,6,rerun_from_initial
+47,EHIJAH_dd310f,4,4,CANCELLED by 1010,7,rerun_from_initial
+48,MIBQAR01_a2d95c,6,1,CANCELLED by 1010,5,rerun_from_initial
+49,BOYDWOO_4962cd,6,1,CANCELLED by 1010,5,rerun_from_initial
+50,CORE_4bbe9a,6,1,CANCELLED by 1010,1,rerun_from_initial
+51,HAYZAL_197ad3,6,1,CANCELLED by 1010,1,rerun_from_initial
+52,PESSUE_02e961,6,1,CANCELLED by 1010,1,rerun_from_initial
+53,EHIJAH_dd310f,6,1,CANCELLED by 1010,0,rerun_from_initial
+54,MIBQAR01_a2d95c,6,2,CANCELLED by 1010,0,rerun_from_initial
+55,BOYDWOO_4962cd,6,2,CANCELLED by 1010,0,rerun_from_initial
+56,CORE_4bbe9a,6,2,CANCELLED by 1010,0,rerun_from_initial
+57,HAYZAL_197ad3,6,2,CANCELLED by 1010,0,rerun_from_initial
+58,PESSUE_02e961,6,2,CANCELLED by 1010,0,rerun_from_initial
+59,EHIJAH_dd310f,6,2,CANCELLED by 1010,0,rerun_from_initial
+60,MIBQAR01_a2d95c,6,3,CANCELLED by 1010,0,rerun_from_initial
+61,BOYDWOO_4962cd,6,3,CANCELLED by 1010,0,rerun_from_initial
+62,CORE_4bbe9a,6,3,CANCELLED by 1010,0,rerun_from_initial
+63,HAYZAL_197ad3,6,3,CANCELLED by 1010,0,rerun_from_initial
+64,PESSUE_02e961,6,3,CANCELLED by 1010,0,rerun_from_initial
+65,EHIJAH_dd310f,6,3,CANCELLED by 1010,0,rerun_from_initial
+66,MIBQAR01_a2d95c,6,4,CANCELLED by 1010,0,rerun_from_initial
+67,BOYDWOO_4962cd,6,4,CANCELLED by 1010,0,rerun_from_initial
+68,CORE_4bbe9a,6,4,CANCELLED by 1010,0,rerun_from_initial
+69,HAYZAL_197ad3,6,4,CANCELLED by 1010,0,rerun_from_initial
+70,PESSUE_02e961,6,4,CANCELLED by 1010,0,rerun_from_initial
+71,EHIJAH_dd310f,6,4,CANCELLED by 1010,0,rerun_from_initial
+72,MIBQAR01_a2d95c,8,1,CANCELLED by 1010,0,rerun_from_initial
+73,BOYDWOO_4962cd,8,1,CANCELLED by 1010,0,rerun_from_initial
+74,CORE_4bbe9a,8,1,CANCELLED by 1010,0,rerun_from_initial
+75,HAYZAL_197ad3,8,1,CANCELLED by 1010,0,rerun_from_initial
+76,PESSUE_02e961,8,1,CANCELLED by 1010,0,rerun_from_initial
+77,EHIJAH_dd310f,8,1,CANCELLED by 1010,0,rerun_from_initial
+78,MIBQAR01_a2d95c,8,2,CANCELLED by 1010,0,rerun_from_initial
+79,BOYDWOO_4962cd,8,2,CANCELLED by 1010,0,rerun_from_initial
+80,CORE_4bbe9a,8,2,CANCELLED by 1010,0,rerun_from_initial
+81,HAYZAL_197ad3,8,2,CANCELLED by 1010,0,rerun_from_initial
+82,PESSUE_02e961,8,2,CANCELLED by 1010,0,rerun_from_initial
+83,EHIJAH_dd310f,8,2,CANCELLED by 1010,0,rerun_from_initial
+84,MIBQAR01_a2d95c,8,3,CANCELLED by 1010,0,rerun_from_initial
+85,BOYDWOO_4962cd,8,3,CANCELLED by 1010,0,rerun_from_initial
+86,CORE_4bbe9a,8,3,CANCELLED by 1010,0,rerun_from_initial
+87,HAYZAL_197ad3,8,3,CANCELLED by 1010,0,rerun_from_initial
+88,PESSUE_02e961,8,3,CANCELLED by 1010,0,rerun_from_initial
+89,EHIJAH_dd310f,8,3,CANCELLED by 1010,0,rerun_from_initial
+90,MIBQAR01_a2d95c,8,4,CANCELLED by 1010,0,rerun_from_initial
+91,BOYDWOO_4962cd,8,4,CANCELLED by 1010,0,rerun_from_initial
+92,CORE_4bbe9a,8,4,CANCELLED by 1010,0,rerun_from_initial
+93,HAYZAL_197ad3,8,4,CANCELLED by 1010,0,rerun_from_initial
+94,PESSUE_02e961,8,4,CANCELLED by 1010,0,rerun_from_initial
+95,EHIJAH_dd310f,8,4,CANCELLED by 1010,0,rerun_from_initial
+96,MIBQAR01_a2d95c,10,1,CANCELLED by 1010,0,rerun_from_initial
+97,BOYDWOO_4962cd,10,1,CANCELLED by 1010,0,rerun_from_initial
+98,CORE_4bbe9a,10,1,CANCELLED by 1010,0,rerun_from_initial
+99,HAYZAL_197ad3,10,1,CANCELLED by 1010,0,rerun_from_initial
+100,PESSUE_02e961,10,1,CANCELLED by 1010,0,rerun_from_initial
+101,EHIJAH_dd310f,10,1,CANCELLED by 1010,0,rerun_from_initial
+102,MIBQAR01_a2d95c,10,2,CANCELLED by 1010,0,rerun_from_initial
+103,BOYDWOO_4962cd,10,2,CANCELLED by 1010,0,rerun_from_initial
+104,CORE_4bbe9a,10,2,CANCELLED by 1010,0,rerun_from_initial
+105,HAYZAL_197ad3,10,2,CANCELLED by 1010,0,rerun_from_initial
+106,PESSUE_02e961,10,2,CANCELLED by 1010,0,rerun_from_initial
+107,EHIJAH_dd310f,10,2,CANCELLED by 1010,0,rerun_from_initial
+108,MIBQAR01_a2d95c,10,3,CANCELLED by 1010,0,rerun_from_initial
+109,BOYDWOO_4962cd,10,3,CANCELLED by 1010,0,rerun_from_initial
+110,CORE_4bbe9a,10,3,CANCELLED by 1010,0,rerun_from_initial
+111,HAYZAL_197ad3,10,3,CANCELLED by 1010,0,rerun_from_initial
+112,PESSUE_02e961,10,3,CANCELLED by 1010,0,rerun_from_initial
+113,EHIJAH_dd310f,10,3,CANCELLED by 1010,0,rerun_from_initial
+114,MIBQAR01_a2d95c,10,4,CANCELLED by 1010,0,rerun_from_initial
+115,BOYDWOO_4962cd,10,4,CANCELLED by 1010,0,rerun_from_initial
+116,CORE_4bbe9a,10,4,CANCELLED by 1010,0,rerun_from_initial
+117,HAYZAL_197ad3,10,4,CANCELLED by 1010,0,rerun_from_initial
+118,PESSUE_02e961,10,4,CANCELLED by 1010,0,rerun_from_initial
+119,EHIJAH_dd310f,10,4,CANCELLED by 1010,0,rerun_from_initial
+120,MIBQAR01_a2d95c,12,1,CANCELLED by 1010,0,rerun_from_initial
+121,BOYDWOO_4962cd,12,1,CANCELLED by 1010,0,rerun_from_initial
+122,CORE_4bbe9a,12,1,CANCELLED by 1010,0,rerun_from_initial
+123,HAYZAL_197ad3,12,1,CANCELLED by 1010,0,rerun_from_initial
+124,PESSUE_02e961,12,1,CANCELLED by 1010,0,rerun_from_initial
+125,EHIJAH_dd310f,12,1,CANCELLED by 1010,0,rerun_from_initial
+126,MIBQAR01_a2d95c,12,2,CANCELLED by 1010,0,rerun_from_initial
+127,BOYDWOO_4962cd,12,2,CANCELLED by 1010,0,rerun_from_initial
+128,CORE_4bbe9a,12,2,CANCELLED by 1010,0,rerun_from_initial
+129,HAYZAL_197ad3,12,2,CANCELLED by 1010,0,rerun_from_initial
+130,PESSUE_02e961,12,2,CANCELLED by 1010,0,rerun_from_initial
+131,EHIJAH_dd310f,12,2,CANCELLED by 1010,0,rerun_from_initial
+132,MIBQAR01_a2d95c,12,3,CANCELLED by 1010,0,rerun_from_initial
+133,BOYDWOO_4962cd,12,3,CANCELLED by 1010,0,rerun_from_initial
+134,CORE_4bbe9a,12,3,CANCELLED by 1010,0,rerun_from_initial
+135,HAYZAL_197ad3,12,3,CANCELLED by 1010,0,rerun_from_initial
+136,PESSUE_02e961,12,3,CANCELLED by 1010,0,rerun_from_initial
+137,EHIJAH_dd310f,12,3,CANCELLED by 1010,0,rerun_from_initial
+138,MIBQAR01_a2d95c,12,4,CANCELLED by 1010,0,rerun_from_initial
+139,BOYDWOO_4962cd,12,4,CANCELLED by 1010,0,rerun_from_initial
+140,CORE_4bbe9a,12,4,CANCELLED by 1010,0,rerun_from_initial
+141,HAYZAL_197ad3,12,4,CANCELLED by 1010,0,rerun_from_initial
+142,PESSUE_02e961,12,4,CANCELLED by 1010,0,rerun_from_initial
+143,EHIJAH_dd310f,12,4,CANCELLED by 1010,0,rerun_from_initial
+144,MIBQAR01_a2d95c,14,1,CANCELLED by 1010,0,rerun_from_initial
+145,BOYDWOO_4962cd,14,1,CANCELLED by 1010,0,rerun_from_initial
+146,CORE_4bbe9a,14,1,CANCELLED by 1010,0,rerun_from_initial
+147,HAYZAL_197ad3,14,1,CANCELLED by 1010,0,rerun_from_initial
+148,PESSUE_02e961,14,1,CANCELLED by 1010,0,rerun_from_initial
+149,EHIJAH_dd310f,14,1,CANCELLED by 1010,0,rerun_from_initial
+150,MIBQAR01_a2d95c,14,2,CANCELLED by 1010,0,rerun_from_initial
+151,BOYDWOO_4962cd,14,2,CANCELLED by 1010,0,rerun_from_initial
+152,CORE_4bbe9a,14,2,CANCELLED by 1010,0,rerun_from_initial
+153,HAYZAL_197ad3,14,2,CANCELLED by 1010,0,rerun_from_initial
+154,PESSUE_02e961,14,2,CANCELLED by 1010,0,rerun_from_initial
+155,EHIJAH_dd310f,14,2,CANCELLED by 1010,0,rerun_from_initial
+156,MIBQAR01_a2d95c,14,3,CANCELLED by 1010,0,rerun_from_initial
+157,BOYDWOO_4962cd,14,3,CANCELLED by 1010,0,rerun_from_initial
+158,CORE_4bbe9a,14,3,CANCELLED by 1010,0,rerun_from_initial
+159,HAYZAL_197ad3,14,3,CANCELLED by 1010,0,rerun_from_initial
+160,PESSUE_02e961,14,3,CANCELLED by 1010,0,rerun_from_initial
+161,EHIJAH_dd310f,14,3,CANCELLED by 1010,0,rerun_from_initial
+162,MIBQAR01_a2d95c,14,4,CANCELLED by 1010,0,rerun_from_initial
+163,BOYDWOO_4962cd,14,4,CANCELLED by 1010,0,rerun_from_initial
+164,CORE_4bbe9a,14,4,CANCELLED by 1010,0,rerun_from_initial
+165,HAYZAL_197ad3,14,4,CANCELLED by 1010,0,rerun_from_initial
+166,PESSUE_02e961,14,4,CANCELLED by 1010,0,rerun_from_initial
+167,EHIJAH_dd310f,14,4,CANCELLED by 1010,0,rerun_from_initial
