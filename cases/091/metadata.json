@@ -1,0 +1,122 @@
+{
+  "case_name": "BOYDWOO_4962cd__dmc",
+  "base_name": "BOYDWOO_4962cd",
+  "branch": "lifsi_dmc",
+  "qmof_id": "qmof-4962cd2",
+  "qmof_name": "boydwoo_str_m1_o5_o24_pcu_sym_168",
+  "case_kind": "static_suppression_generalizable",
+  "family_tag": "BOYDWOO",
+  "pld_A": 5.37854,
+  "lcd_A": 8.7488,
+  "cell_lengths_A": {
+    "a": 80.090871,
+    "b": 79.74253479867502,
+    "c": 68.19226846716647
+  },
+  "box_volume_A3": 329919.4024173892,
+  "electrolyte_effective_connected_volume_A3": 1705.52,
+  "electrolyte_effective_connected_volume_scaled_A3": 170552.0,
+  "electrolyte_bottleneck_guest": "fsi",
+  "replication": {
+    "x": 5,
+    "y": 5,
+    "z": 4
+  },
+  "framework_atom_count": 10600,
+  "framework_charge_sum": -8.674172491396348e-13,
+  "framework_nonzero_charge_count": 10600,
+  "framework_charge_base_atoms": 106,
+  "target_concentration_M": 1.0,
+  "target_pairs": 50,
+  "actual_pairs": 50,
+  "target_dmc_molecules": 400,
+  "actual_dmc_molecules": 400,
+  "salt_volume_per_pair_proxy_A3": 1660.5778811026237,
+  "salt_loading_volume_proxy_A3": 83028.89405513118,
+  "dmc_loading_volume_proxy_A3": 38000.0,
+  "combined_loading_volume_proxy_A3": 121028.89405513118,
+  "combined_loading_volume_fraction_of_effective_pore": 0.7096304590689713,
+  "loading_complete": true,
+  "framework_only_prebuild": false,
+  "loading_basis": "effective_connected_pore_volume_1p0M",
+  "dmc_per_lifsi": 8,
+  "dmc_charge_neutralization": {
+    "raw_net_charge_e": 0.0002000000000001445,
+    "correction_e": -0.00020000000000000004,
+    "corrected_net_charge_e": 8.326672684688674e-17,
+    "site_corrections_e": [
+      -1.6e-05,
+      -1.7e-05,
+      -1.7e-05,
+      -1.6e-05,
+      -1.7e-05,
+      -1.7e-05,
+      -1.6e-05,
+      -1.7e-05,
+      -1.7e-05,
+      -1.6e-05,
+      -1.7e-05,
+      -1.7e-05
+    ]
+  },
+  "replica_index": 4,
+  "velocity_seed": 643495301,
+  "dmc_occupancy_A3": 95.0,
+  "insertion_order": [
+    "fsi",
+    "dmc",
+    "li"
+  ],
+  "packing_scales_used": [
+    0.82,
+    0.76,
+    0.7,
+    0.64,
+    0.58
+  ],
+  "raw_inserted_counts": {
+    "fsi": 50,
+    "li": 50,
+    "dmc": 400
+  },
+  "ion_charge_scale": 0.7,
+  "temperature_K": 298.0,
+  "pressure_bar": 1.0,
+  "anneal_peak_temperature_K": 400.0,
+  "anneal_ramp_ps": 300.0,
+  "anneal_hold_ps": 400.0,
+  "anneal_cool_ps": 300.0,
+  "anneal_ensemble": "nve_langevin_to_nvt",
+  "relax_limit_ps": 50.0,
+  "equilibration_ps": 0.0,
+  "timestep_fs": 1.0,
+  "frame_dt_ps": 1.0,
+  "chunk_ps": 1000.0,
+  "max_ns": 15.0,
+  "max_chunks": 15,
+  "expected_chunks": 15,
+  "dump_every_steps": 1000,
+  "autosave_every_steps": 50000,
+  "pair_cutoff_A": 12.0,
+  "mix_rule": "geometric",
+  "li_type": 10,
+  "fsi_anchor_type": 11,
+  "guest_types": {
+    "li": 10,
+    "fsi_all": [
+      11,
+      12,
+      13,
+      14
+    ],
+    "fsi_anchor": 11
+  },
+  "framework_path": "/home/qiuyong/ion_MD/DMC_density/scan_6mof_4rep_20261112/dmc_08/rep_04/selected_frameworks/BOYDWOO_4962cd_dmc/framework.data",
+  "source_cif_path": "/data/qy/ion_MD/li_fsi_dmc_static_suppression_validation_20260713/selected_frameworks/charged_cifs/qmof-4962cd2_pacman.cif",
+  "guest_molecule_files": {
+    "li": "/home/qiuyong/ion_MD/DMC_density/scan_6mof_4rep_20261112/dmc_08/rep_04/cases/BOYDWOO_4962cd__dmc/guest_molecules/li.mol",
+    "fsi": "/home/qiuyong/ion_MD/DMC_density/scan_6mof_4rep_20261112/dmc_08/rep_04/cases/BOYDWOO_4962cd__dmc/guest_molecules/fsi.mol",
+    "dmc": "/home/qiuyong/ion_MD/DMC_density/scan_6mof_4rep_20261112/dmc_08/rep_04/cases/BOYDWOO_4962cd__dmc/guest_molecules/dmc.mol"
+  },
+  "job_name": "liFSI_BOYDWOO_D"
+}

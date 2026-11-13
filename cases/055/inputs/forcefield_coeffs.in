@@ -1,0 +1,75 @@
+pair_coeff 1 1 0.124000 2.461553
+pair_coeff 2 2 0.044000 2.571134
+pair_coeff 3 3 0.105000 3.430851
+pair_coeff 4 4 0.105000 3.430851
+pair_coeff 5 5 0.105000 3.430851
+pair_coeff 6 6 0.069000 3.260689
+pair_coeff 7 7 0.069000 3.260689
+pair_coeff 8 8 0.060000 3.118146
+pair_coeff 9 9 0.060000 3.118146
+pair_coeff 10 10 0.000500 2.870000
+pair_coeff 11 11 0.170000 3.250000
+pair_coeff 12 12 0.250000 3.550000
+pair_coeff 13 13 0.210000 2.960000
+pair_coeff 14 14 0.053000 2.950000
+pair_coeff 15 15 0.066 3.5000000
+pair_coeff 16 16 0.140 2.9000000
+pair_coeff 17 17 0.070 3.5500000
+pair_coeff 18 18 0.210 2.9600000
+pair_coeff 19 19 0.140 2.9000000
+pair_coeff 20 20 0.066 3.5000000
+pair_coeff 21 21 0.030 2.5000000
+pair_coeff 22 22 0.030 2.5000000
+pair_coeff 23 23 0.030 2.5000000
+pair_coeff 24 24 0.030 2.5000000
+pair_coeff 25 25 0.030 2.5000000
+pair_coeff 26 26 0.030 2.5000000
+bond_coeff 1 374.8805 1.570000
+bond_coeff 2 637.0698 1.440000
+bond_coeff 3 224.5459 1.580000
+bond_coeff 4 320.0000 1.4100
+bond_coeff 5 214.0000 1.3270
+bond_coeff 6 570.0000 1.2290
+bond_coeff 7 214.0000 1.3270
+bond_coeff 8 320.0000 1.4100
+bond_coeff 9 340.0000 1.0900
+bond_coeff 10 340.0000 1.0900
+bond_coeff 11 340.0000 1.0900
+bond_coeff 12 340.0000 1.0900
+bond_coeff 13 340.0000 1.0900
+bond_coeff 14 340.0000 1.0900
+angle_coeff 1 80.1864 125.600000
+angle_coeff 2 94.2878 113.600000
+angle_coeff 3 107.7916 103.500000
+angle_coeff 4 128.7046 104.100000
+angle_coeff 5 115.7983 118.500000
+angle_coeff 6 83.000 116.900
+angle_coeff 7 83.000 123.400
+angle_coeff 8 70.130 117.450
+angle_coeff 9 83.000 116.900
+angle_coeff 10 35.000 109.500
+angle_coeff 11 35.000 109.500
+angle_coeff 12 35.000 109.500
+angle_coeff 13 35.000 109.500
+angle_coeff 14 35.000 109.500
+angle_coeff 15 35.000 109.500
+angle_coeff 16 83.000 123.400
+angle_coeff 17 33.000 107.800
+angle_coeff 18 33.000 107.800
+angle_coeff 19 33.000 107.800
+angle_coeff 20 33.000 107.800
+angle_coeff 21 33.000 107.800
+angle_coeff 22 33.000 107.800
+dihedral_coeff 1 0.000000 0.000000 -0.003585 0.000000
+dihedral_coeff 2 3.214866 -2.948614 -2.028442 -0.684751
+dihedral_coeff 3 0.000 5.124 0.000 0.000
+dihedral_coeff 4 4.669 5.124 0.000 0.000
+dihedral_coeff 5 4.669 5.124 0.000 0.000
+dihedral_coeff 6 0.000 0.000 0.198 0.000
+dihedral_coeff 7 0.000 0.000 0.198 0.000
+dihedral_coeff 8 0.000 0.000 0.198 0.000
+dihedral_coeff 9 0.000 0.000 0.198 0.000
+dihedral_coeff 10 0.000 0.000 0.198 0.000
+dihedral_coeff 11 0.000 0.000 0.198 0.000
+dihedral_coeff 12 0.000 5.124 0.000 0.000
+improper_coeff 1 10.500 -1 2

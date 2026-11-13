@@ -1,0 +1,26 @@
+{
+  "analysis": {
+    "min_diffusive_ns": 3.0,
+    "min_loglog_slope": 0.9,
+    "max_loglog_slope": 1.1,
+    "min_slope_window_frames": 25,
+    "min_start_ps": 100.0,
+    "tail_fit_fraction": 0.4,
+    "tail_fit_min_points": 25,
+    "dynamic_window_min_ps": 1000.0,
+    "dynamic_subwindow_min_ps": 400.0,
+    "fit_min_origins": 500,
+    "fit_min_origins_fraction": 0.1,
+    "dynamic_subwindow_min_fraction": 0.0,
+    "dynamic_window_candidate_step_ps": 250.0,
+    "dynamic_window_search_start_fraction": 0.2,
+    "dynamic_window_search_end_fraction": 0.8,
+    "thermo_window_ps": 100.0,
+    "temperature_tolerance_K": 10.0,
+    "max_temp_drift_sigma": 0.5,
+    "max_pe_drift_sigma": 0.5,
+    "d_plateau_rel_spread_max": 0.35,
+    "d_block_rel_deviation_max": 0.25,
+    "d_block_count": 3
+  }
+}
