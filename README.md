@@ -51,7 +51,23 @@ The first script computes Li and FSI MSD and log–log slopes, with linear MSD f
 
 The structures are ready to run; original source paths retained in metadata are provenance only and are not consulted for the MD run. Git does not include raw trajectories, restart files, existing outputs, or machine-specific LAMMPS binaries.
 
-## 批量后处理 v2：前半程初步估计与后半程对照
+## 推荐：整条轨迹的双对数区间筛选（v3）
+
+对整条生产轨迹计算 Li、FSI 质心和集体电荷位移的 MSD，然后在**滞后时间**上扫描起点为 50 ps 步长、长度为 200、400、750、1000 ps 的窗口，滞后上限为 3000 ps 和轨迹长度 20% 中的较小者。滞后时间是两帧的时间差；整条轨迹中满足该时间差的时间起点都参与平均，并非截取模拟的前半段或后半段。对于每种量分别寻找双对数斜率 0.9–1.1、线性 R²≥0.98、正斜率和拟合区间前后两半斜率比为 0.5–2 的候选，从中选择斜率最接近 1 的窗口。这里的前后两半指拟合**滞后区间**，不是拆分模拟轨迹。找不到区间时标记 `no_candidate`。
+
+```bash
+python scripts/transport_v3.py --case runs/000 --output-dir analysis_v3/000
+sbatch --array=0-3%4 slurm/analyze_array_v3.slurm
+# 可选 Kinisi Li 交叉检查（先安装 requirements-kinisi.txt）
+DMC_KINISI=1 sbatch --export=ALL --array=0-3%4 slurm/analyze_array_v3.slurm
+python scripts/summarize_transport_v3.py --manifest manifest.csv --results-root analysis_v3 --output analysis_v3/summary.csv
+```
+
+输出双对数及拟合区间图 `diagnostics.png` / `.pdf`、曲线和 JSON；目录已存在时不覆盖。集体电导率以整个模拟盒体积和模型部分电荷计算；NE 用 Li 和 FSI 质心扩散估算。汇总只对 4 个不同种子重复都通过筛查的量报告均值和样本标准差；缺失或未通过时留空。Kinisi 是可选数值敏感性检查，不会替未进入扩散区的轨迹给出可信值。
+
+扫描多个窗口并选择最接近 1 的结果会产生选择偏差，必须同时检查曲线、邻近区间和独立重复；这些候选窗口和阈值是探索性筛选，不保证真实扩散区、统计收敛或实验准确度。R² 和双对数斜率接近 1 不足以排除非平稳性、时间起点相关性或选择偏差；还须检查结构、能量、温度、周期解包与各重复的差异。需要完整 15 个 DCD/restart；数值检查和前后温度均值检查不能证明体系结构平衡。当前默认滞后上限为完整轨迹长度的 20%。
+
+## 历史 v2（已被 v3 取代）：前后时间段对照
 
 建议使用 `scripts/transport_v2.py`。默认 `first-half` 模式只用生产轨迹的前 7.5 ns 计算数值，以便在后半程可能发生变化时避免把两种状态混合。**这不是自动证明前半程已经平衡或处于长时间扩散区**，所得值一律标为 `first_half_provisional`。后半程不会进入该数值，但仍计算并显示为对照；前后差异可能来自结构/体系状态变化、采样噪声或处理误差，需结合能量、温度和结构诊断原因。
 
