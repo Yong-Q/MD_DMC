@@ -43,3 +43,19 @@ v5 与历史结果的算法与窗口不同，不可将它们作为同一方法�
 - `transport_framework_validation_20261115.json`：实现、缓存续跑、同一数据拆分合并一致性和已知解析电导率合成测试的记录；不等于 MOF 体系物理验证。
 
 本次 42 条均完成数值处理；5 条单轨迹的三方向 STACIE 谱诊断满足当前筛查建议，其余 37 条保留 needs_review（有效频率、相对误差或模型诊断不足）。同一状态的完整重复、共同扩散平台和方法一致性没有同时满足全部规则，故 screened_mean 均留空。描述值、区间和诊断图仍可用于分析趋势与定位采样问题。这些结果不能与历史 v1–v5 表直接混合。另一台机器也须使用同一入口和配置处理已有轨迹，然后用框架 merge 子命令合并结果与曲线。
+
+## 跨机器合并交接
+
+- `transport_framework_local42_merge_bundle.tar.gz`：42 个本地统一结果的可合并包，内含各 case 的 `results.json`、`curves.csv` 和配置；没有 DCD、restart、原始坐标缓存或图像。包内 84 个结果/曲线文件均已逐项校验 SHA-256 与本地原件一致。
+- `transport_framework_case_registry.csv`：全部 168 个体系的统一方法状态索引。目前 42 个已有本地统一结果，80 个仅有另一机器的旧 v4 表，46 个没有可用的统一结果。旧 v4 的 80 行不能冒充统一方法结果合并。
+
+另一台机器完成统一后处理后，从仓库根目录执行：
+
+```bash
+mkdir merge_inputs
+# 如果 merge_inputs 已存在，请选新目录，避免覆盖。
+tar -xzf results/transport_framework_local42_merge_bundle.tar.gz -C merge_inputs
+python scripts/transport_framework.py merge --inputs merge_inputs/local_analysis transport_analysis --output merged_analysis
+```
+
+这会用全部独立重复重新计算共同 MSD 区间与统计汇总；若重复 case 或配置不同会拒绝合并。只有相同框架的逐 case 结果与曲线可以合并，不能直接拼接不同方法的汇总均值。

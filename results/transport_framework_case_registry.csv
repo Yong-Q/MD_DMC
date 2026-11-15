@@ -1,0 +1,169 @@
+array_index,mof,dmc_per_lifsi,replica,unified_framework_status,available_legacy_method,required_action
+0,MIBQAR01_a2d95c,2,1,ready_local_unified,,merge bundle available
+1,BOYDWOO_4962cd,2,1,ready_local_unified,,merge bundle available
+2,CORE_4bbe9a,2,1,ready_local_unified,,merge bundle available
+3,HAYZAL_197ad3,2,1,ready_local_unified,,merge bundle available
+4,PESSUE_02e961,2,1,ready_local_unified,,merge bundle available
+5,EHIJAH_dd310f,2,1,ready_local_unified,,merge bundle available
+6,MIBQAR01_a2d95c,2,2,ready_local_unified,,merge bundle available
+7,BOYDWOO_4962cd,2,2,ready_local_unified,,merge bundle available
+8,CORE_4bbe9a,2,2,ready_local_unified,,merge bundle available
+9,HAYZAL_197ad3,2,2,ready_local_unified,,merge bundle available
+10,PESSUE_02e961,2,2,ready_local_unified,,merge bundle available
+11,EHIJAH_dd310f,2,2,ready_local_unified,,merge bundle available
+12,MIBQAR01_a2d95c,2,3,ready_local_unified,,merge bundle available
+13,BOYDWOO_4962cd,2,3,ready_local_unified,,merge bundle available
+14,CORE_4bbe9a,2,3,ready_local_unified,,merge bundle available
+15,HAYZAL_197ad3,2,3,ready_local_unified,,merge bundle available
+16,PESSUE_02e961,2,3,ready_local_unified,,merge bundle available
+17,EHIJAH_dd310f,2,3,ready_local_unified,,merge bundle available
+18,MIBQAR01_a2d95c,2,4,ready_local_unified,,merge bundle available
+19,BOYDWOO_4962cd,2,4,ready_local_unified,,merge bundle available
+20,CORE_4bbe9a,2,4,ready_local_unified,,merge bundle available
+21,HAYZAL_197ad3,2,4,ready_local_unified,,merge bundle available
+22,PESSUE_02e961,2,4,ready_local_unified,,merge bundle available
+23,EHIJAH_dd310f,2,4,ready_local_unified,,merge bundle available
+24,MIBQAR01_a2d95c,4,1,ready_local_unified,,merge bundle available
+25,BOYDWOO_4962cd,4,1,ready_local_unified,,merge bundle available
+26,CORE_4bbe9a,4,1,ready_local_unified,,merge bundle available
+27,HAYZAL_197ad3,4,1,ready_local_unified,,merge bundle available
+28,PESSUE_02e961,4,1,ready_local_unified,,merge bundle available
+29,EHIJAH_dd310f,4,1,ready_local_unified,,merge bundle available
+30,MIBQAR01_a2d95c,4,2,ready_local_unified,,merge bundle available
+31,BOYDWOO_4962cd,4,2,ready_local_unified,,merge bundle available
+32,CORE_4bbe9a,4,2,unified_result_not_available,,supply complete trajectory or unified result when available
+33,HAYZAL_197ad3,4,2,ready_local_unified,,merge bundle available
+34,PESSUE_02e961,4,2,ready_local_unified,,merge bundle available
+35,EHIJAH_dd310f,4,2,ready_local_unified,,merge bundle available
+36,MIBQAR01_a2d95c,4,3,ready_local_unified,,merge bundle available
+37,BOYDWOO_4962cd,4,3,ready_local_unified,,merge bundle available
+38,CORE_4bbe9a,4,3,ready_local_unified,,merge bundle available
+39,HAYZAL_197ad3,4,3,ready_local_unified,,merge bundle available
+40,PESSUE_02e961,4,3,ready_local_unified,,merge bundle available
+41,EHIJAH_dd310f,4,3,ready_local_unified,,merge bundle available
+42,MIBQAR01_a2d95c,4,4,ready_local_unified,,merge bundle available
+43,BOYDWOO_4962cd,4,4,legacy_v4_only,v4,reprocess existing trajectory with transport_framework.py
+44,CORE_4bbe9a,4,4,legacy_v4_only,v4,reprocess existing trajectory with transport_framework.py
+45,HAYZAL_197ad3,4,4,legacy_v4_only,v4,reprocess existing trajectory with transport_framework.py
+46,PESSUE_02e961,4,4,legacy_v4_only,v4,reprocess existing trajectory with transport_framework.py
+47,EHIJAH_dd310f,4,4,legacy_v4_only,v4,reprocess existing trajectory with transport_framework.py
+48,MIBQAR01_a2d95c,6,1,legacy_v4_only,v4,reprocess existing trajectory with transport_framework.py
+49,BOYDWOO_4962cd,6,1,legacy_v4_only,v4,reprocess existing trajectory with transport_framework.py
+50,CORE_4bbe9a,6,1,legacy_v4_only,v4,reprocess existing trajectory with transport_framework.py
+51,HAYZAL_197ad3,6,1,legacy_v4_only,v4,reprocess existing trajectory with transport_framework.py
+52,PESSUE_02e961,6,1,legacy_v4_only,v4,reprocess existing trajectory with transport_framework.py
+53,EHIJAH_dd310f,6,1,legacy_v4_only,v4,reprocess existing trajectory with transport_framework.py
+54,MIBQAR01_a2d95c,6,2,legacy_v4_only,v4,reprocess existing trajectory with transport_framework.py
+55,BOYDWOO_4962cd,6,2,legacy_v4_only,v4,reprocess existing trajectory with transport_framework.py
+56,CORE_4bbe9a,6,2,legacy_v4_only,v4,reprocess existing trajectory with transport_framework.py
+57,HAYZAL_197ad3,6,2,legacy_v4_only,v4,reprocess existing trajectory with transport_framework.py
+58,PESSUE_02e961,6,2,legacy_v4_only,v4,reprocess existing trajectory with transport_framework.py
+59,EHIJAH_dd310f,6,2,legacy_v4_only,v4,reprocess existing trajectory with transport_framework.py
+60,MIBQAR01_a2d95c,6,3,legacy_v4_only,v4,reprocess existing trajectory with transport_framework.py
+61,BOYDWOO_4962cd,6,3,legacy_v4_only,v4,reprocess existing trajectory with transport_framework.py
+62,CORE_4bbe9a,6,3,legacy_v4_only,v4,reprocess existing trajectory with transport_framework.py
+63,HAYZAL_197ad3,6,3,legacy_v4_only,v4,reprocess existing trajectory with transport_framework.py
+64,PESSUE_02e961,6,3,legacy_v4_only,v4,reprocess existing trajectory with transport_framework.py
+65,EHIJAH_dd310f,6,3,legacy_v4_only,v4,reprocess existing trajectory with transport_framework.py
+66,MIBQAR01_a2d95c,6,4,unified_result_not_available,,supply complete trajectory or unified result when available
+67,BOYDWOO_4962cd,6,4,unified_result_not_available,,supply complete trajectory or unified result when available
+68,CORE_4bbe9a,6,4,unified_result_not_available,,supply complete trajectory or unified result when available
+69,HAYZAL_197ad3,6,4,unified_result_not_available,,supply complete trajectory or unified result when available
+70,PESSUE_02e961,6,4,unified_result_not_available,,supply complete trajectory or unified result when available
+71,EHIJAH_dd310f,6,4,unified_result_not_available,,supply complete trajectory or unified result when available
+72,MIBQAR01_a2d95c,8,1,legacy_v4_only,v4,reprocess existing trajectory with transport_framework.py
+73,BOYDWOO_4962cd,8,1,legacy_v4_only,v4,reprocess existing trajectory with transport_framework.py
+74,CORE_4bbe9a,8,1,legacy_v4_only,v4,reprocess existing trajectory with transport_framework.py
+75,HAYZAL_197ad3,8,1,legacy_v4_only,v4,reprocess existing trajectory with transport_framework.py
+76,PESSUE_02e961,8,1,legacy_v4_only,v4,reprocess existing trajectory with transport_framework.py
+77,EHIJAH_dd310f,8,1,legacy_v4_only,v4,reprocess existing trajectory with transport_framework.py
+78,MIBQAR01_a2d95c,8,2,legacy_v4_only,v4,reprocess existing trajectory with transport_framework.py
+79,BOYDWOO_4962cd,8,2,legacy_v4_only,v4,reprocess existing trajectory with transport_framework.py
+80,CORE_4bbe9a,8,2,legacy_v4_only,v4,reprocess existing trajectory with transport_framework.py
+81,HAYZAL_197ad3,8,2,legacy_v4_only,v4,reprocess existing trajectory with transport_framework.py
+82,PESSUE_02e961,8,2,legacy_v4_only,v4,reprocess existing trajectory with transport_framework.py
+83,EHIJAH_dd310f,8,2,legacy_v4_only,v4,reprocess existing trajectory with transport_framework.py
+84,MIBQAR01_a2d95c,8,3,legacy_v4_only,v4,reprocess existing trajectory with transport_framework.py
+85,BOYDWOO_4962cd,8,3,legacy_v4_only,v4,reprocess existing trajectory with transport_framework.py
+86,CORE_4bbe9a,8,3,legacy_v4_only,v4,reprocess existing trajectory with transport_framework.py
+87,HAYZAL_197ad3,8,3,legacy_v4_only,v4,reprocess existing trajectory with transport_framework.py
+88,PESSUE_02e961,8,3,legacy_v4_only,v4,reprocess existing trajectory with transport_framework.py
+89,EHIJAH_dd310f,8,3,legacy_v4_only,v4,reprocess existing trajectory with transport_framework.py
+90,MIBQAR01_a2d95c,8,4,unified_result_not_available,,supply complete trajectory or unified result when available
+91,BOYDWOO_4962cd,8,4,unified_result_not_available,,supply complete trajectory or unified result when available
+92,CORE_4bbe9a,8,4,unified_result_not_available,,supply complete trajectory or unified result when available
+93,HAYZAL_197ad3,8,4,unified_result_not_available,,supply complete trajectory or unified result when available
+94,PESSUE_02e961,8,4,unified_result_not_available,,supply complete trajectory or unified result when available
+95,EHIJAH_dd310f,8,4,unified_result_not_available,,supply complete trajectory or unified result when available
+96,MIBQAR01_a2d95c,10,1,legacy_v4_only,v4,reprocess existing trajectory with transport_framework.py
+97,BOYDWOO_4962cd,10,1,unified_result_not_available,,supply complete trajectory or unified result when available
+98,CORE_4bbe9a,10,1,legacy_v4_only,v4,reprocess existing trajectory with transport_framework.py
+99,HAYZAL_197ad3,10,1,legacy_v4_only,v4,reprocess existing trajectory with transport_framework.py
+100,PESSUE_02e961,10,1,legacy_v4_only,v4,reprocess existing trajectory with transport_framework.py
+101,EHIJAH_dd310f,10,1,legacy_v4_only,v4,reprocess existing trajectory with transport_framework.py
+102,MIBQAR01_a2d95c,10,2,legacy_v4_only,v4,reprocess existing trajectory with transport_framework.py
+103,BOYDWOO_4962cd,10,2,legacy_v4_only,v4,reprocess existing trajectory with transport_framework.py
+104,CORE_4bbe9a,10,2,legacy_v4_only,v4,reprocess existing trajectory with transport_framework.py
+105,HAYZAL_197ad3,10,2,legacy_v4_only,v4,reprocess existing trajectory with transport_framework.py
+106,PESSUE_02e961,10,2,legacy_v4_only,v4,reprocess existing trajectory with transport_framework.py
+107,EHIJAH_dd310f,10,2,legacy_v4_only,v4,reprocess existing trajectory with transport_framework.py
+108,MIBQAR01_a2d95c,10,3,legacy_v4_only,v4,reprocess existing trajectory with transport_framework.py
+109,BOYDWOO_4962cd,10,3,legacy_v4_only,v4,reprocess existing trajectory with transport_framework.py
+110,CORE_4bbe9a,10,3,legacy_v4_only,v4,reprocess existing trajectory with transport_framework.py
+111,HAYZAL_197ad3,10,3,legacy_v4_only,v4,reprocess existing trajectory with transport_framework.py
+112,PESSUE_02e961,10,3,legacy_v4_only,v4,reprocess existing trajectory with transport_framework.py
+113,EHIJAH_dd310f,10,3,legacy_v4_only,v4,reprocess existing trajectory with transport_framework.py
+114,MIBQAR01_a2d95c,10,4,unified_result_not_available,,supply complete trajectory or unified result when available
+115,BOYDWOO_4962cd,10,4,unified_result_not_available,,supply complete trajectory or unified result when available
+116,CORE_4bbe9a,10,4,unified_result_not_available,,supply complete trajectory or unified result when available
+117,HAYZAL_197ad3,10,4,unified_result_not_available,,supply complete trajectory or unified result when available
+118,PESSUE_02e961,10,4,unified_result_not_available,,supply complete trajectory or unified result when available
+119,EHIJAH_dd310f,10,4,unified_result_not_available,,supply complete trajectory or unified result when available
+120,MIBQAR01_a2d95c,12,1,legacy_v4_only,v4,reprocess existing trajectory with transport_framework.py
+121,BOYDWOO_4962cd,12,1,unified_result_not_available,,supply complete trajectory or unified result when available
+122,CORE_4bbe9a,12,1,legacy_v4_only,v4,reprocess existing trajectory with transport_framework.py
+123,HAYZAL_197ad3,12,1,legacy_v4_only,v4,reprocess existing trajectory with transport_framework.py
+124,PESSUE_02e961,12,1,legacy_v4_only,v4,reprocess existing trajectory with transport_framework.py
+125,EHIJAH_dd310f,12,1,legacy_v4_only,v4,reprocess existing trajectory with transport_framework.py
+126,MIBQAR01_a2d95c,12,2,legacy_v4_only,v4,reprocess existing trajectory with transport_framework.py
+127,BOYDWOO_4962cd,12,2,legacy_v4_only,v4,reprocess existing trajectory with transport_framework.py
+128,CORE_4bbe9a,12,2,legacy_v4_only,v4,reprocess existing trajectory with transport_framework.py
+129,HAYZAL_197ad3,12,2,legacy_v4_only,v4,reprocess existing trajectory with transport_framework.py
+130,PESSUE_02e961,12,2,legacy_v4_only,v4,reprocess existing trajectory with transport_framework.py
+131,EHIJAH_dd310f,12,2,legacy_v4_only,v4,reprocess existing trajectory with transport_framework.py
+132,MIBQAR01_a2d95c,12,3,legacy_v4_only,v4,reprocess existing trajectory with transport_framework.py
+133,BOYDWOO_4962cd,12,3,legacy_v4_only,v4,reprocess existing trajectory with transport_framework.py
+134,CORE_4bbe9a,12,3,unified_result_not_available,,supply complete trajectory or unified result when available
+135,HAYZAL_197ad3,12,3,legacy_v4_only,v4,reprocess existing trajectory with transport_framework.py
+136,PESSUE_02e961,12,3,legacy_v4_only,v4,reprocess existing trajectory with transport_framework.py
+137,EHIJAH_dd310f,12,3,legacy_v4_only,v4,reprocess existing trajectory with transport_framework.py
+138,MIBQAR01_a2d95c,12,4,unified_result_not_available,,supply complete trajectory or unified result when available
+139,BOYDWOO_4962cd,12,4,unified_result_not_available,,supply complete trajectory or unified result when available
+140,CORE_4bbe9a,12,4,unified_result_not_available,,supply complete trajectory or unified result when available
+141,HAYZAL_197ad3,12,4,unified_result_not_available,,supply complete trajectory or unified result when available
+142,PESSUE_02e961,12,4,unified_result_not_available,,supply complete trajectory or unified result when available
+143,EHIJAH_dd310f,12,4,unified_result_not_available,,supply complete trajectory or unified result when available
+144,MIBQAR01_a2d95c,14,1,legacy_v4_only,v4,reprocess existing trajectory with transport_framework.py
+145,BOYDWOO_4962cd,14,1,legacy_v4_only,v4,reprocess existing trajectory with transport_framework.py
+146,CORE_4bbe9a,14,1,legacy_v4_only,v4,reprocess existing trajectory with transport_framework.py
+147,HAYZAL_197ad3,14,1,legacy_v4_only,v4,reprocess existing trajectory with transport_framework.py
+148,PESSUE_02e961,14,1,unified_result_not_available,,supply complete trajectory or unified result when available
+149,EHIJAH_dd310f,14,1,unified_result_not_available,,supply complete trajectory or unified result when available
+150,MIBQAR01_a2d95c,14,2,legacy_v4_only,v4,reprocess existing trajectory with transport_framework.py
+151,BOYDWOO_4962cd,14,2,unified_result_not_available,,supply complete trajectory or unified result when available
+152,CORE_4bbe9a,14,2,unified_result_not_available,,supply complete trajectory or unified result when available
+153,HAYZAL_197ad3,14,2,legacy_v4_only,v4,reprocess existing trajectory with transport_framework.py
+154,PESSUE_02e961,14,2,unified_result_not_available,,supply complete trajectory or unified result when available
+155,EHIJAH_dd310f,14,2,unified_result_not_available,,supply complete trajectory or unified result when available
+156,MIBQAR01_a2d95c,14,3,unified_result_not_available,,supply complete trajectory or unified result when available
+157,BOYDWOO_4962cd,14,3,unified_result_not_available,,supply complete trajectory or unified result when available
+158,CORE_4bbe9a,14,3,unified_result_not_available,,supply complete trajectory or unified result when available
+159,HAYZAL_197ad3,14,3,unified_result_not_available,,supply complete trajectory or unified result when available
+160,PESSUE_02e961,14,3,unified_result_not_available,,supply complete trajectory or unified result when available
+161,EHIJAH_dd310f,14,3,unified_result_not_available,,supply complete trajectory or unified result when available
+162,MIBQAR01_a2d95c,14,4,unified_result_not_available,,supply complete trajectory or unified result when available
+163,BOYDWOO_4962cd,14,4,unified_result_not_available,,supply complete trajectory or unified result when available
+164,CORE_4bbe9a,14,4,unified_result_not_available,,supply complete trajectory or unified result when available
+165,HAYZAL_197ad3,14,4,unified_result_not_available,,supply complete trajectory or unified result when available
+166,PESSUE_02e961,14,4,unified_result_not_available,,supply complete trajectory or unified result when available
+167,EHIJAH_dd310f,14,4,unified_result_not_available,,supply complete trajectory or unified result when available

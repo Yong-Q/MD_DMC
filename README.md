@@ -34,4 +34,4 @@ python scripts/transport_framework.py merge --inputs local_analysis other_analys
 
 ## 数据与旧结果
 
-仓库不包含轨迹和重启二进制文件。本地测试结果见 [统一框架逐体系表](results/transport_framework_local_20261115_per_case.csv)、[按体系汇总](results/transport_framework_local_20261115_by_state.csv) 和 [验证记录](results/transport_framework_validation_20261115.json)。解释方式和历史结果见 [results/README.md](results/README.md)；旧算法表不能与统一框架结果混用。初始结构在原集群通过了 100 步检查，但这不等于 15 ns 输运系数已收敛。
+仓库不包含轨迹和重启二进制文件。全部168个体系的状态见 [统一结果索引](results/transport_framework_case_registry.csv)，本地42个结果已提供 [可合并包](results/transport_framework_local42_merge_bundle.tar.gz)。本地测试结果见 [统一框架逐体系表](results/transport_framework_local_20261115_per_case.csv)、[按体系汇总](results/transport_framework_local_20261115_by_state.csv) 和 [验证记录](results/transport_framework_validation_20261115.json)。解释方式和历史结果见 [results/README.md](results/README.md)；旧算法表不能与统一框架结果混用。初始结构在原集群通过了 100 步检查，但这不等于 15 ns 输运系数已收敛。
