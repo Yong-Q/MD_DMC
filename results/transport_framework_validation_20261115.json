@@ -1,0 +1,23 @@
+{
+  "cases": 42,
+  "resume_reused_all_42": true,
+  "real_cache_numeric_reproduction": true,
+  "two_machine_merge_equivalent": true,
+  "stacie_version": "1.3.0",
+  "synthetic_analytic_sigma_mS_cm": 14.557876340295277,
+  "synthetic_replica_statistics": {
+    "n": 4,
+    "complete": true,
+    "mean": 14.428942124852522,
+    "sd": 2.2170894985888157,
+    "ci95": [
+      10.90105798321888,
+      17.956826266486164
+    ],
+    "uncertainty": "Student-t across independent replicas; no filtering of successful values"
+  },
+  "quality": "implementation and limited sample checks only; not physical validation",
+  "same_spectral_result": true,
+  "framework_sha256": "f4df8231f77be44ccdf8bff8845c7be6b3b8af650e73d5dfffd7e693bd6388c7",
+  "config_sha256": "2095ea6b990045d472a0c7527a339ac06896b3e206e6e95fcd7342becb1f56b9"
+}

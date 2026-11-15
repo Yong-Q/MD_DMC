@@ -23,7 +23,7 @@
 
 v4 使用 `scripts/transport_v4.py`：整条轨迹、自适应窗口（500–6000 ps）、α∈[0.9,1.1]、R²≥0.98、半窗斜率比 0.5–2。`no_candidate` 表示该量未找到满足条件的扩散区，不表示零。
 
-## v5：统一方法的本地 42 个体系
+## 历史 v5：本地 42 个体系（不与统一框架结果混用）
 
 `v5_local_20261115_per_case.csv` 按 168 个体系列出状态；只有本机 42 个已完成 MD 的体系经过 v5 后处理，其余 `not_analyzed` 不表示零。`v5_local_20261115_by_state.csv` 按 MOF、DMC/LiFSI 和物理量汇总，只有 4 个不同种子的重复都找到候选窗口且温度粗筛通过时才给均值与样本标准差；否则保留状态、均值留空。
 
@@ -34,3 +34,12 @@ v5 与历史结果的算法与窗口不同，不可将它们作为同一方法�
 字段中 `*_alpha_near_boundary` 标记 α 位于 0.9–0.92 或 1.08–1.1，仅供人工关注，是观察真实数据后增加的提示，不是预先校准的质量标准。若某组的 4 次均有值但至少一个贴边，汇总标记 `complete_alpha_boundary_warning`；均值仍仅为探索结果。`candidate` 同样只表示满足启发式筛选，应检查图、能量、结构和重复间差异。电导率是 xyz 三方向的标量平均，不是电导率张量。未上传原始轨迹或图片。
 
 本机 v5 后处理脚本 SHA-256：`3d0d7322b309b4764907d63d8a5fb071257f6074a0e152e6170f7bb9b7bccd7f`；环境 MDAnalysis 2.10.0、NumPy 2.4.4、pandas 2.3.0、tidynamics 1.1.2、matplotlib 3.10.7。与另一台机器统一时应使用相同的 v5 代码和一致的参数、单位、体积和电荷约定；不同版本环境导致的差异应另行检查。
+
+## 当前统一框架（推荐入口 transport_framework.py）
+
+- `transport_framework_local_20261115_per_case.csv`：本地 42 个完整体系的 STACIE 电导率、谱质量状态及共同 MSD 窗口的诊断值。Li/FSI diagnostic_value 单位 cm²/s，collective_charge diagnostic_value 单位 mS/cm。共同窗口基于同一 MOF/比例的重复平均曲线，全部重复都保留。
+- `transport_framework_local_20261115_by_state.csv`：同一体系的描述均值、样本标准差和独立重复 Student-t 95% 区间；STACIE 与 EH 配对差值检查，以及筛选状态。`screened_mean` 留空不代表零。当前数据没有通过全部筛查的状态，因此不能把描述均值当作确定的实验预测。
+- `transport_framework_local_20261115_config.json`：这次锁定的配置和 SHA-256。
+- `transport_framework_validation_20261115.json`：实现、缓存续跑、同一数据拆分合并一致性和已知解析电导率合成测试的记录；不等于 MOF 体系物理验证。
+
+本次 42 条均完成数值处理；5 条单轨迹的三方向 STACIE 谱诊断满足当前筛查建议，其余 37 条保留 needs_review（有效频率、相对误差或模型诊断不足）。同一状态的完整重复、共同扩散平台和方法一致性没有同时满足全部规则，故 screened_mean 均留空。描述值、区间和诊断图仍可用于分析趋势与定位采样问题。这些结果不能与历史 v1–v5 表直接混合。另一台机器也须使用同一入口和配置处理已有轨迹，然后用框架 merge 子命令合并结果与曲线。

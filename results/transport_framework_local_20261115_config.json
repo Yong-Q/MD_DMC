@@ -1,0 +1,25 @@
+{
+  "schema_version": 1,
+  "stacie_version": "1.3.0",
+  "spectral_powers": [
+    0,
+    1,
+    2
+  ],
+  "random_seed": 20261115,
+  "msd_fallback_lag_fraction": [
+    0.1,
+    0.5
+  ],
+  "plateau_max_lag_fraction": 0.25,
+  "plateau_alpha": [
+    0.9,
+    1.1
+  ],
+  "plateau_min_width_ps": 500,
+  "plateau_min_lag_ratio": 2,
+  "expected_replicas": 4,
+  "relative_spectral_error_warning": 0.5,
+  "quality_note": "QC thresholds are screening rules, not calibrated coverage guarantees.",
+  "config_sha256": "2095ea6b990045d472a0c7527a339ac06896b3e206e6e95fcd7342becb1f56b9"
+}
