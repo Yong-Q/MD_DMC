@@ -1,0 +1,2 @@
+# Optional Bayesian cross-check, validated here with this version.
+kinisi==2.0.5

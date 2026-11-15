@@ -51,7 +51,32 @@ The first script computes Li and FSI MSD and log–log slopes, with linear MSD f
 
 The structures are ready to run; original source paths retained in metadata are provenance only and are not consulted for the MD run. Git does not include raw trajectories, restart files, existing outputs, or machine-specific LAMMPS binaries.
 
-## 双对数区间筛选和电导率（探索版）
+## 批量后处理 v2：前半程初步估计与后半程对照
+
+建议使用 `scripts/transport_v2.py`。默认 `first-half` 模式只用生产轨迹的前 7.5 ns 计算数值，以便在后半程可能发生变化时避免把两种状态混合。**这不是自动证明前半程已经平衡或处于长时间扩散区**，所得值一律标为 `first_half_provisional`。后半程不会进入该数值，但仍计算并显示为对照；前后差异可能来自结构/体系状态变化、采样噪声或处理误差，需结合能量、温度和结构诊断原因。
+
+v2 从 Li 位置、FSI **质量加权质心**和全部移动原子的部分电荷分别计算 MSD 和集体电荷位移。它在前半程按预定顺序尝试滞后窗口 750–1500、500–1000、250–750、100–500 ps，选第一个满足双对数斜率 0.9–1.1、线性 R²≥0.98、斜率为正的窗口。没有候选窗口就标记 `no_candidate`，不输出该量的数值。然后在后半程同一区间做对照；它也满足上述条件且前后斜率比为 0.5–2 时记录 `candidate`，否则记录 `holdout_rejected`。不根据后半程重新挑窗口。时间段虽不重叠，仍可能受长相关时间影响，并不能保证统计独立。
+
+这些阈值和时间窗口是**预设的工程筛查规则，而不是可靠度证明或经校准的统计检验**。默认要求完整 15 个 DCD 和 15 个 restart，全部帧数须与元数据一致；不会自动剔除生产初期。程序对生产阶段温度日志检查覆盖率，并比较前后半程平均温度与目标值（容差 10 K，仅作粗筛）。还必须额外检查前半程的能量、MOF/客体结构和离子分布是否平稳，以及周期边界解包是否正确。集体电导率使用整个模拟盒体积和模型中的部分电荷；NE 电导率用 Li、FSI 质心的自扩散和模型电荷，忽略离子相关性。固定 MOF、50 对离子、模拟时长、缩放电荷和有限尺寸都可能影响结果。
+
+```bash
+# 默认只对前半程估计；输出目录必须不存在。
+python scripts/transport_v2.py --case runs/000 --output-dir analysis_v2/000
+# 批量分析：在仓库根目录提交，先调整分区、内存、并发和时间。
+sbatch --array=0-3%4 slurm/analyze_array_v2.slurm
+# 安装可选依赖 `pip install -r requirements-kinisi.txt` 后，对 Li 前半程候选区间加做可选敏感性诊断：
+DMC_KINISI=1 sbatch --export=ALL --array=0-3%4 slurm/analyze_array_v2.slurm
+# 4 个不同重复均有前半程候选值时，计算其均值和样本标准差。
+python scripts/summarize_transport_v2.py --manifest manifest.csv --results-root analysis_v2 --output analysis_v2/summary.csv
+```
+
+`diagnostics.png` / `.pdf` 展示前后半程双对数与线性曲线、选定窗口和前半程拟合；`results.json` 记录每个预设窗口的筛选指标、后半程状态以及结果；`curves.csv` 保存曲线。程序错误保留 `failure.json`。汇总要求对应 MOF 和比例的 4 个不同编号、不同速度种子重复全部有候选值，且目标温度、盒体积一致，所用时段的平均温度通过粗筛；否则均值留空。汇总保留各重复后半程对照状态，因此即使 4 个初步值均有，也要检查是否发生 `holdout_rejected`；样本标准差不能覆盖模型或力场偏差。
+
+另一种 `--mode verified` 模式要求后半程也通过同窗口检查，才拟合整个 15 ns；它只适用于确认前后同一状态的情况，不应用于后半段异常的体系。例如先 `export DMC_ANALYSIS_MODE=verified DMC_ANALYSIS_ROOT="$PWD/analysis_verified"`，再通过 `sbatch --export=ALL ...` 提交；汇总时对该独立目录使用 `--mode verified`。
+
+Kinisi 为可选 Li 交叉检查，使用选定窗口、16/31 个滞后点、两个随机种子和特征值裁剪；数值稳定不代表 MCMC 收敛、后验覆盖或扩散区已经获得证明。测试中其他矩阵处理方式和随机种子曾使结果大幅波动。混合正负部分电荷体系的集体电导率没有通过 Kinisi 独立验证。之前 v1 自动扫描的 10 条 Li 候选中 9 条斜率集中在 0.800–0.805，存在贴边选择风险，不应直接当作可靠结果。
+
+## 旧版 v1：仅供历史对照
 
 `scripts/robust_transport.py` 从一条完整的 15 ns 轨迹计算 Li 自扩散、FSI 氮原子锚点自扩散、以及全部移动原子部分电荷的集体电荷位移。分别为三条曲线寻找窗口，输出双对数图、线性图和区间；没有合格窗口就标记 `no_diffusive_window`，不输出该量的数值。它是筛选与诊断工具，不能凭双对数斜率自动证明扩散或电导率已收敛。
 
