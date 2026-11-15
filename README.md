@@ -2,9 +2,13 @@
 
 Six MOFs × seven DMC/LiFSI ratios (2, 4, 6, 8, 10, 12, 14) × four independently prepared replicas. Each system has 50 LiFSI pairs; the number of DMC molecules is the ratio multiplied by 50. All 168 initial systems passed a 100-step LAMMPS check on the original cluster. `manifest.csv` maps array indices to compositions, replicas and SHA-256 of `system.data`.
 
-These are **initial configurations**, including cases that had already started or finished elsewhere. The repository does not contain trajectories, restart files or prior results. Running a case here starts it from its initial structure; it cannot continue the prior cluster's partial trajectory. `lists/cancelled_before_start_indices.txt` is the list of 115 jobs canceled while pending in the original array, not a live status list. Avoid duplicate runs by checking your own records.
+These are **initial configurations**, including cases that had already started or finished elsewhere. The repository does not contain trajectories or restart files; derived local transport results are provided under `results/`. Running a case here starts it from its initial structure; it cannot continue the prior cluster's partial trajectory. `lists/cancelled_before_start_indices.txt` is the list of 115 jobs canceled while pending in the original array, not a live status list. Avoid duplicate runs by checking your own records.
 
 The six materials were selected using historical Li self-diffusion classifications; these labels do not establish conductivity enhancement or suppression. All calculations use the original fixed framework and force-field inputs. Production is 15 chunks of 1 ns at 298 K, after the original relaxation/annealing protocol. Each replica has its own initial structure and velocity seed. Cell size is fixed across concentrations within each MOF.
+
+## 本地后处理结果表
+
+[168 个体系的已有扩散结果](results/existing_diffusion_20261115.csv) 和 [42 个已分析体系的已有电导率窗口表](results/existing_conductivity_windows_20261115.csv) 的字段、筛选条件与浓度定义见 [结果说明](results/README.md)。未计算或筛选不通过的数值留空，不表示零。
 
 ## 原服务器任务状态（2026-11-13 快照）
 
