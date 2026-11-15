@@ -118,7 +118,29 @@ python scripts/summarize_transport.py --manifest manifest.csv --results-root ana
 
 `--cached-curves` 仅供用旧 `li_msd.csv`、`fsi_msd.csv` 和 `charge_moment_msd.csv` 进行开发对比：无法核验其来源和电荷约定，故不计算 NE，也不会计入汇总结果。正式分析请从原始轨迹运行。要求全部 15 个 DCD 和对应的完成 restart，且总帧数必须匹配元数据；程序不自动判断截断轨迹、周期解包正确性、平衡性或实际温度漂移。
 
-## v4：整条轨迹的自适应滞后窗口筛选
+## 统一后处理 v5（推荐）
+
+在检查 v4 和其结果后，v5 用于统一本地及另一台机器的体系：从完整轨迹计算 Li 自扩散、FSI 质心自扩散和 Einstein–Helfand 集体电导率；NE 电导率作为辅助。v4 在大量候选窗口中直接挑 α 最接近 1 的窗口，存在选区偏差；其允许的长滞后时间接近 15 ns 轨迹长度，采样更少。v4 历史结果仅供对照，不应与 v5 混合汇总。`v4_20261115_conductivity_by_state.csv` 还混用了旧固定窗口和 v4 结果。
+
+v5 使用整条生产轨迹的全部可用时间起点计算 MSD，不按轨迹前后半段划分；拟合对象是滞后时间。预先按 2000、1000、500 ps 宽度和起点 100 ps 步长检查；最大滞后时间为完整轨迹长度的 50%。要求 α∈[0.9,1.1]、拟合 R²≥0.98、斜率为正、窗口两半的斜率比为 2/3–1.5，且窗口整体移动 ±100 ps 后斜率变化不超过 35%。按预定顺序选第一个通过的区间，避免以 α 离 1 最近作为优化目标。找不到时为 `no_candidate`，不输出该量的值。
+
+这些均为启发式筛查参数，**不是严格的可靠性保证或实验验证**：时间起点高度相关，选择窗口仍有偏差，非扩散过程的交叉区也可能满足这些条件。还需要检查 MSD 图、拟合窗口敏感性、模拟平衡、结构、电荷约定、独立重复及尺寸效应。缩放电荷的集体电导率使用整个盒体积，输出 xyz 三方向的标量平均而不是电导率张量；FSI 是质量加权质心。Kinisi 可选，仅为 Li 的条件性数值交叉检查，不能替代采样与物理验证。
+
+```bash
+# 已有 MD 放在 runs/NNN 下；每个输出目录必须不存在。
+git pull
+python scripts/transport_v5.py --case runs/000 --output-dir analysis_v5/000
+# 所有完整、尚未处理的体系：按目标集群选择分区和合适的并发。
+ids=$(python scripts/list_completed_for_v5.py)
+[ -n "$ids" ] && sbatch --array="${ids}%4" slurm/analyze_array_v5.slurm
+# 可选安装 requirements-kinisi.txt，然后提交前设置 DMC_KINISI=1。
+python scripts/export_transport_v5.py --manifest manifest.csv --results-root analysis_v5 --output analysis_v5/per_case.csv
+python scripts/summarize_transport_v5.py --manifest manifest.csv --results-root analysis_v5 --output analysis_v5/summary.csv
+```
+
+程序输出每条轨迹的双对数与拟合区域图、曲线和 JSON。逐体系表额外标记 α 位于 0.9–0.92 或 1.08–1.1 的贴边结果，这只是提醒、不是独立统计检验。聚合表只有 4 个不同速度种子重复都通过筛选、温度粗筛、盒体积与目标温度一致时才给均值和样本标准差；缺失不能当零。`list_completed_for_v5.py` 跳过已有输出目录（包括失败目录），需检查并保留失败证据后再安排重跑。读取轨迹仍要求完整 15 个 DCD/restart、帧数正确；这些检查不保证周期解包或结构正确。
+
+## 历史 v4（仅供对照，存在窗口选择与长滞后风险）
 
 `scripts/transport_v4.py` 不再使用固定的 200/400/750/1000 ps 窗口或固定的 3 ns 滞后上限，而是对整条生产轨迹扫描：
 
