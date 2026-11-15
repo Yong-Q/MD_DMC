@@ -12,16 +12,19 @@ for row in csv.DictReader(a.manifest.open()):
  groups[(row['base_name'],row['dmc_per_lifsi'])].append((row,j))
 a.output.parent.mkdir(parents=True,exist_ok=True)
 with a.output.open('x',newline='') as f:
- fields=['base_name','dmc_per_lifsi','observable','n_expected','n_candidate','status','mean','sample_std','units','case_statuses','kinisi_statuses']
+ fields=['base_name','dmc_per_lifsi','observable','n_expected','n_candidate','status','mean','sample_std','units','case_statuses','kinisi_statuses','alpha_boundary_cases']
  w=csv.DictWriter(f,fieldnames=fields);w.writeheader()
  for (base,ratio),cases in sorted(groups.items(),key=lambda x:(x[0][0],int(x[0][1]))):
   for name,key,units in [('Li','diffusion_cm2_s','cm2/s'),('FSI_COM','diffusion_cm2_s','cm2/s'),('collective_charge','conductivity_mS_cm','mS/cm')]:
-   vals=[];statuses=[];kinisi_statuses=[];target='candidate'
+   vals=[];statuses=[];kinisi_statuses=[];boundary=[];target='candidate'
    for row,j in cases:
-    obs=j.get(name,{}) if j else {};status=obs.get('status','missing_or_failed');temp=j.get('temperature_diagnostic',{}) if j else {};temp_ok=temp.get('first_status')=='pass' and temp.get('second_status')=='pass';
+    obs=j.get(name,{}) if j else {};status=obs.get('status','missing_or_failed');alpha=obs.get('fit',{}).get('alpha');
+    if status=='candidate' and alpha is not None and (alpha<.92 or alpha>1.08):boundary.append(row['array_index'])
+    temp=j.get('temperature_diagnostic',{}) if j else {};temp_ok=temp.get('first_status')=='pass' and temp.get('second_status')=='pass';
     if status==target and not temp_ok:status='temperature_unchecked_or_outside'
     statuses.append(f"{row['array_index']}:{status}");kinisi_statuses.append(f"{row['array_index']}:{obs.get('kinisi_crosscheck',{}).get('status','not_requested')}" if name=='Li' else '');vals.append({'replica':int(row['replica']),'seed':j.get('velocity_seed') if j else None,'value':obs.get(key) if status==target else None})
    r=summarize_group(vals,expected=4); present=[j for _,j in cases if j]; vols=[float(j['volume_A3']) for j in present];temps=[float(j['temperature_K']) for j in present];
    if r['status']=='complete' and (max(vols)-min(vols)>max(vols)*1e-5 or max(temps)-min(temps)>1e-3):r={'status':'conditions_mismatch','n_valid':r['n_valid'],'n_expected':r['n_expected']}
-   w.writerow({'base_name':base,'dmc_per_lifsi':ratio,'observable':name,'n_expected':r['n_expected'],'n_candidate':r['n_valid'],'status':r['status'],'mean':r.get('mean',''),'sample_std':r.get('sample_std',''),'units':units,'case_statuses':';'.join(statuses),'kinisi_statuses':';'.join(x for x in kinisi_statuses if x)})
+   if r['status']=='complete' and boundary:r['status']='complete_alpha_boundary_warning'
+   w.writerow({'base_name':base,'dmc_per_lifsi':ratio,'observable':name,'n_expected':r['n_expected'],'n_candidate':r['n_valid'],'status':r['status'],'mean':r.get('mean',''),'sample_std':r.get('sample_std',''),'units':units,'case_statuses':';'.join(statuses),'kinisi_statuses':';'.join(x for x in kinisi_statuses if x),'alpha_boundary_cases':';'.join(boundary)})
 print(a.output)

@@ -59,3 +59,16 @@ def test_conductivity_conversion_matches_si():
  from robust_transport import conductivity_from_slope
  e=1.602176634e-19;k=1.380649e-23
  assert np.isclose(conductivity_from_slope(1,1000,300), e**2*1e-8/(6*1000e-30*k*300))
+
+def test_summary_marks_boundary_and_requires_four(tmp_path):
+ import csv,json,subprocess
+ root=Path(__file__).resolve().parents[1];manifest=tmp_path/'manifest.csv';rows=[dict(array_index=str(i),base_name='SYN',dmc_per_lifsi='2',replica=str(i+1)) for i in range(4)]
+ with manifest.open('w',newline='') as f:
+  w=csv.DictWriter(f,fieldnames=rows[0]);w.writeheader();w.writerows(rows)
+ results=tmp_path/'r';results.mkdir()
+ for i in range(4):
+  d=results/f'{i:03d}';d.mkdir();v=dict(status='candidate',diffusion_cm2_s=1.+i,fit={'alpha':.905 if i==0 else .98})
+  j=dict(base_name='SYN',dmc_per_lifsi=2,replica_index=i+1,velocity_seed=i+100,method_version='v5 test',temperature_K=298,volume_A3=1000,temperature_diagnostic={'first_status':'pass','second_status':'pass'},Li=v,FSI_COM={'status':'no_candidate'},collective_charge={'status':'no_candidate'})
+  (d/'results.json').write_text(json.dumps(j))
+ output=tmp_path/'summary.csv';subprocess.run([sys.executable,str(root/'scripts/summarize_transport_v5.py'),'--manifest',str(manifest),'--results-root',str(results),'--output',str(output)],check=True)
+ li=next(r for r in csv.DictReader(output.open()) if r['observable']=='Li');assert li['status']=='complete_alpha_boundary_warning' and li['alpha_boundary_cases']=='0' and float(li['mean'])==2.5

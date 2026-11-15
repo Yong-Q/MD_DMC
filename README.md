@@ -138,7 +138,7 @@ python scripts/export_transport_v5.py --manifest manifest.csv --results-root ana
 python scripts/summarize_transport_v5.py --manifest manifest.csv --results-root analysis_v5 --output analysis_v5/summary.csv
 ```
 
-程序输出每条轨迹的双对数与拟合区域图、曲线和 JSON。逐体系表额外标记 α 位于 0.9–0.92 或 1.08–1.1 的贴边结果，这只是提醒、不是独立统计检验。聚合表只有 4 个不同速度种子重复都通过筛选、温度粗筛、盒体积与目标温度一致时才给均值和样本标准差；缺失不能当零。`list_completed_for_v5.py` 跳过已有输出目录（包括失败目录），需检查并保留失败证据后再安排重跑。读取轨迹仍要求完整 15 个 DCD/restart、帧数正确；这些检查不保证周期解包或结构正确。
+程序输出每条轨迹的双对数与拟合区域图、曲线和 JSON。逐体系表额外标记 α 位于 0.9–0.92 或 1.08–1.1 的贴边结果，这只是根据已有数据添加的提醒、不是预校准的统计检验；汇总中含贴边重复的均值会标记 `complete_alpha_boundary_warning`。聚合表只有 4 个不同速度种子重复都通过筛选、温度粗筛、盒体积与目标温度一致时才给均值和样本标准差；缺失不能当零。`list_completed_for_v5.py` 跳过已有输出目录（包括失败目录），需检查并保留失败证据后再安排重跑。读取轨迹仍要求完整 15 个 DCD/restart、帧数正确；这些检查不保证周期解包或结构正确。
 
 ## 历史 v4（仅供对照，存在窗口选择与长滞后风险）
 
